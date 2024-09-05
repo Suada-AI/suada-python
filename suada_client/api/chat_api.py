@@ -38,7 +38,7 @@ class ChatApi:
 
 
     @validate_call
-    def chat_completions(
+    def generate(
         self,
         completion: Completion,
         _request_timeout: Union[
@@ -81,7 +81,7 @@ class ChatApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._chat_completions_serialize(
+        _param = self._generate_serialize(
             completion=completion,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -104,7 +104,7 @@ class ChatApi:
 
 
     @validate_call
-    def chat_completions_with_http_info(
+    def generate_with_http_info(
         self,
         completion: Completion,
         _request_timeout: Union[
@@ -147,7 +147,7 @@ class ChatApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._chat_completions_serialize(
+        _param = self._generate_serialize(
             completion=completion,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -170,7 +170,7 @@ class ChatApi:
 
 
     @validate_call
-    def chat_completions_without_preload_content(
+    def generate_without_preload_content(
         self,
         completion: Completion,
         _request_timeout: Union[
@@ -213,7 +213,7 @@ class ChatApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._chat_completions_serialize(
+        _param = self._generate_serialize(
             completion=completion,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -231,7 +231,7 @@ class ChatApi:
         return response_data.response
 
 
-    def _chat_completions_serialize(
+    def _generate_serialize(
         self,
         completion,
         _request_auth,

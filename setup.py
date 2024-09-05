@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "suada-client"
-VERSION = "1.0.0"
+VERSION = "1.0.0-rc1"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.1.0",
@@ -34,16 +34,14 @@ setup(
     name=NAME,
     version=VERSION,
     description="Suada API",
-    author="OpenAPI Generator community",
-    author_email="team@openapitools.org",
-    url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "Suada API"],
+    author="Suada",
+    author_email="hello@suada.ai",
+    url="https://suada.ai",
+    keywords=["NSFW AI", "AI", "Suada API", "Artificial Intelligence", "NSFW"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     long_description_content_type='text/markdown',
-    long_description="""\
-    OpenAPI specification for the Suada API.
-    """,  # noqa: E501
+    long_description="",
     package_data={"suada_client": ["py.typed"]},
 )

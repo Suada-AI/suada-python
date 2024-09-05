@@ -1,10 +1,10 @@
 name: Publish Python Package
 
 on:
-  push:
-    branches:
+  pull_request:
+    types: [closed]
+    branches:  
       - main
-      - 'release/*'  # Optional: Add any other branches you use for releases
 
 jobs:
   build:
@@ -33,3 +33,15 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
           twine upload dist/*
+
+      # Optional: Create GitHub release
+      - name: Create a Release
+        id: create_release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: true
+          tag_name: ${{ github.ref }}
+          title: Release ${{ github.ref_name }}
+          prerelease: false
+          automatic_release_tag: ${{ github.ref_name }}
