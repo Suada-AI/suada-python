@@ -80,11 +80,11 @@ with suada_client.ApiClient(configuration) as api_client:
 
     try:
         # Create chat completion
-        api_response = api_instance.chat_completions(completion)
-        print("The response of ChatApi->chat_completions:\n")
+        api_response = api_instance.generate(completion)
+        print("The response of ChatApi->generate:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ChatApi->chat_completions: %s\n" % e)
+        print("Exception when calling ChatApi->generate: %s\n" % e)
 
 ```
 
@@ -94,7 +94,7 @@ All URIs are relative to *https://api.suada.ai*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ChatApi* | [**chat_completions**](docs/ChatApi.md#chat_completions) | **POST** /v1/chat/completions | Create chat completion
+*ChatApi* | [**generate**](docs/ChatApi.md#generate) | **POST** /v1/chat/completions | Create chat completion
 
 
 ## Documentation For Models

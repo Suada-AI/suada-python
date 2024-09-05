@@ -4,11 +4,11 @@ All URIs are relative to *https://api.suada.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chat_completions**](ChatApi.md#chat_completions) | **POST** /v1/chat/completions | Create chat completion
+[**generate**](ChatApi.md#generate) | **POST** /v1/chat/completions | Create chat completion
 
 
-# **chat_completions**
-> CompletionResult chat_completions(completion)
+# **generate**
+> CompletionResult generate(completion)
 
 Create chat completion
 
@@ -43,15 +43,15 @@ configuration = suada_client.Configuration(
 with suada_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = suada_client.ChatApi(api_client)
-    completion = suada_client.Completion() # Completion | 
+    completion = suada_client.Completion()
 
     try:
         # Create chat completion
-        api_response = api_instance.chat_completions(completion)
-        print("The response of ChatApi->chat_completions:\n")
+        api_response = api_instance.generate(completion)
+        print("The response of ChatApi->generate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ChatApi->chat_completions: %s\n" % e)
+        print("Exception when calling ChatApi->generate: %s\n" % e)
 ```
 
 
